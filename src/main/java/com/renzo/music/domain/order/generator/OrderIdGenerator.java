@@ -1,4 +1,4 @@
-package com.renzo.music.domain.product.generator;
+package com.renzo.music.domain.order.generator;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.UUID;
 
-public class ProductIdGenerator implements IdentifierGenerator {
+public class OrderIdGenerator implements IdentifierGenerator {
     @Override
     public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
         UUID uuid = UUID.randomUUID();

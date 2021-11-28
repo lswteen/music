@@ -1,9 +1,6 @@
-package com.renzo.music.domain.product.entity;
+package com.renzo.music.domain.order.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,15 +13,20 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "products")
-public class Product {
+@Table(name = "orders")
+public class Order {
     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GenericGenerator(name = "orderIdGenerator", strategy = "com.renzo.music.domain.order.generator.OrderIdGenerator")
+    @GeneratedValue(generator = "orderIdGenerator")
+    private String id;
 
-    private String name;
+    @Column(name="user_id")
+    private Long userId;
 
+    @Column(name="product_id")
+    private Long productId;
+
+    @Column(name="price")
     private int price;
 
     @CreationTimestamp
@@ -34,4 +36,5 @@ public class Product {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
 }
