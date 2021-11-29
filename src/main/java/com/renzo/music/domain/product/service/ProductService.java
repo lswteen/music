@@ -10,10 +10,6 @@ import org.springframework.stereotype.Service;
 public class ProductService {
     private final ProductRepository productRepository;
 
-//    public List<Product> getAllById(List<Long> ids){
-//        return productRepository.findAllById(ids);
-//    }
-
     public Product save(Product product){
         return productRepository.save(product);
     }
