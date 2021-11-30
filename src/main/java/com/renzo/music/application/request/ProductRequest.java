@@ -12,10 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductRequest {
-    private Long productId;
-    private List<Long> ids;
+    private Long id;
     private String name;
     private int price;
-
 
 }

@@ -18,8 +18,8 @@ public class ProductAppService {
     private final ProductService productService;
 
     @Transactional
-    public List<ProductResponse> getAllByProducts(ProductRequest productRequest){
-        List<Product> products = productService.getAllByProducts(productRequest.getIds());
+    public List<ProductResponse> getAllByProducts(List<Long> ids){
+        List<Product> products = productService.getAllByProducts(ids);
         List<ProductResponse> productResponses = new ArrayList<>();
 
         products.forEach(product -> {
@@ -56,7 +56,7 @@ public class ProductAppService {
     public List<ProductResponse> update(List<ProductRequest> productRequests){
         List<ProductResponse> productResponses = new ArrayList<>();
         productRequests.forEach(productRequest -> {
-            Product product = productService.getById(productRequest.getProductId());
+            Product product = productService.getById(productRequest.getId());
             product.setName(productRequest.getName());
             product.setPrice(productRequest.getPrice());
             Product updateProduct = productService.save(product);
@@ -72,8 +72,8 @@ public class ProductAppService {
     }
 
     @Transactional
-    public void delete(ProductRequest productRequest){
-        Product product = productService.getById(productRequest.getProductId());
+    public void delete(Long productId){
+        Product product = productService.getById(productId);
         productService.deleteByProductId(product.getId());
     }
 
