@@ -16,7 +16,6 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    @Transactional(readOnly = true)
     public List<Product> getAllByProducts(List<Long> ids){
         return productRepository.findAllById(ids);
     }

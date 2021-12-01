@@ -26,19 +26,5 @@ class ProductRepositoryTest {
         assertEquals(9999,newProduct.getPrice());
     }
 
-//    @Test
-//    void find_product(){
-//        Product product = Product.createProductBuilder()
-//                .name("상품A")
-//                .price(9999)
-//                .build();
-//        Product newProduct = productRepository.save(product);
-//
-//        Product findProduct = productRepository.getById(newProduct.getId());
-//        assertEquals("상품A",findProduct.getName());
-//        assertEquals(9999,findProduct.getPrice());
-//        assertEquals(1,findProduct.getId());
-//
-//    }
 
 }

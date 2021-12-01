@@ -1,6 +1,6 @@
-package com.renzo.music.application.response;
+package com.renzo.music.application.request;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class OrderResponse {
+public class OrderRequest {
     private String id;
     private Long userId;
     private Long productId;
