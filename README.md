@@ -25,8 +25,6 @@ Header 를 사용
 
 ##제출
 github repository 에 소스를 올린 후 공유 (아래 메일주소 collaborator로 추가)
-donghun.seo@dreamus.io / sh.ryan.park@dreamus.io
-dongwoon.son@dreamus.io / recruit@dreamus.io
 실행 가능한 jar 파일 제출 또는 docker image 주소를 공유
 
 ##응답규격
